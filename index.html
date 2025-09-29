@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fanny UGC - Portfolio 2025</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #ff69b4;
+            --secondary-color: #ff85c0;
+            --light-color: #fff;
+            --dark-color: #333;
+            --pink-light: #ffe6f2;
+            --pink-dark: #ff4d94;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--pink-light);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: var(--pink-light);
+        }
+
+        .header-title {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .header-subtitle {
+            font-size: 1rem;
+            color: var(--dark-color);
+            margin-bottom: 20px;
+        }
+
+        .profile-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid var(--primary-color);
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .email {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 15px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            min-width: 80px;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--dark-color);
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 40px 20px;
+            background-color: white;
+            margin: 30px 0;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .about-content {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .about-image {
+            flex: 0 0 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .about-text ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .about-text li {
+            margin-bottom: 8px;
+        }
+
+        /* Brands Section */
+        .brands-section {
+            padding: 40px 20px;
+            background-color: var(--pink-light);
+        }
+
+        .brands-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+
+        .brand-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .brand-logo img {
+            max-width: 70%;
+            max-height: 70%;
+            object-fit: contain;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 40px 20px;
+            background-color: white;
+            margin: 30px 0;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .testimonials-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .testimonial-card {
+            background-color: var(--pink-light);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* Categories Navigation */
+        .categories-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 30px 0;
+        }
+
+        .category-btn {
+            padding: 10px 20px;
+            background-color: white;
+            border: 2px solid var(--primary-color);
+            border-radius: 30px;
+            color: var(--primary-color);
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 40px 20px;
+            background-color: white;
+            margin: 30px 0;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .content-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .content-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .content-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .content-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .content-item:hover .content-image img {
+            transform: scale(1.05);
+        }
+
+        .content-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 15px;
+            color: white;
+        }
+
+        .content-title {
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: center;
+            width: 100%;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .content-item:hover .play-button {
+            opacity: 1;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            padding: 40px 20px;
+            background-color: var(--pink-light);
+            margin: 30px 0;
+        }
+
+        .pricing-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .pricing-description {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--dark-color);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .pricing-card {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .pricing-title-card {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .pricing-price {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .pricing-list {
+            list-style: none;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .pricing-list li {
+            margin: 10px 0;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .pricing-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: white;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: white;
+            color: var(--primary-color);
+            border-radius: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Equipment Section */
+        .equipment-section {
+            padding: 40px 20px;
+            background-color: white;
+            margin: 30px 0;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .equipment-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+
+        .equipment-item {
+            text-align: center;
+            padding: 15px;
+        }
+
+        .equipment-image {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .equipment-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .equipment-name {
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 40px 20px;
+            background-color: var(--pink-light);
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .contact-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .contact-email {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .reserve-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .reserve-button:hover {
+            background-color: var(--secondary-color);
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-title {
+                font-size: 2rem;
+            }
+            
+            .profile-container {
+                flex-direction: column;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                flex: 0 0 100%;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .content-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .equipment-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-title {
+                font-size: 1.5rem;
+            }
+            
+            .stat-item {
+                min-width: 60px;
+                padding: 10px;
+            }
+            
+            .stat-number {
+                font-size: 1.2rem;
+            }
+            
+            .content-item {
+                height: 250px;
+            }
+            
+            .content-image {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1 class="header-title">Fanny UGC</h1>
+            <p class="header-subtitle">Créatrice de contenus UGC & Creative Strategist - Paris</p>
+            
+            <div class="profile-container">
+                <div class="profile-image">
+                    <img src="https://placehold.co/150x150" alt="Fanny Profile">
+                </div>
+                <div class="contact-info">
+                    <div class="email">ugcfanny@gmail.com</div>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-number">+2.7K</div>
+                            <div class="stat-label">Followers</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">+5.4K</div>
+                            <div class="stat-label">Engagements</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <h2 class="section-title">Hello, moi c'est Fanny 26ans</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://placehold.co/300x400" alt="Fanny in action">
+                </div>
+                <div class="about-text">
+                    <p>Experte en création de contenu depuis plus de 5 ans.</p>
+                    
+                    <h3>Profil 360° – Créatrice UGC, Réalisatrice, Copywriter & Créative strategist</h3>
+                    <ul>
+                        <li><strong>Créatrice UGC:</strong> Je conçois des vidéos authentiques et engageantes pour les réseaux sociaux, pensées pour performer en organique comme en ads.</li>
+                        <li><strong>Réalisatrice freelance:</strong> Je sélectionne les comédiens, organise les journées de tournage, filme, dirige et monte les vidéos.</li>
+                        <li><strong>Copywriter:</strong> J'écris des scripts publicitaires impactants, pensés pour capter l'attention et convertir.</li>
+                        <li><strong>Creative Strategist:</strong> Je développe des concepts créatifs forts, je manage des pôles de créateurs UGC, je les aide à incarner les bons messages, et je fais le lien entre la vision des marques et l'exécution terrain.</li>
+                        <li><strong>Approche 360°:</strong> De l'idée à la post-prod, j'accompagne les marques sur chaque étape du process avec une vision stratégique, créative et opérationnelle.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section class="brands-section">
+        <div class="container">
+            <h2 class="brands-title">Elles m'ont fait confiance, statistiques & avis</h2>
+            <div class="brands-grid">
+                <div class="brand-logo">
+                    <img src="https://placehold.co/60x60" alt="Darty">
+                </div>
+                <div class="brand-logo">
+                    <img src="https://placehold.co/60x60" alt="900">
+                </div>
+                <div class="brand-logo">
+                    <img src="https://placehold.co/60x60" alt="L'Oréal">
+                </div>
+                <div class="brand-logo">
+                    <img src="https://placehold.co/60x60" alt="Cheerz">
+                </div>
+                <div class="brand-logo">
+                    <img src="https://placehold.co/60x60" alt="Revlon">
+                </div>
+                <div class="brand-logo">
+                    <img src="https://placehold.co/60x60" alt="Pathé">
+                </div>
+                <div class="brand-logo">
+                    <img src="https://placehold.co/60x60" alt="Sisters Republic">
+                </div>
+                <div class="brand-logo">
+                    <img src="https://placehold.co/60x60" alt="Unbottled">
+                </div>
+                <div class="brand-logo">
+                    <img src="https://placehold.co/60x60" alt="Fruitz">
+                </div>
+                <div class="brand-logo">
+                    <img src="https://placehold.co/60x60" alt="Conforama">
+                </div>
+                <div class="brand-logo">
+                    <img src="https://placehold.co/60x60" alt="Blissim">
+                </div>
+                <div class="brand-logo">
+                    <img src="https://placehold.co/60x60" alt="Wild">
+                </div>
+                <div class="brand-logo">
+                    <img src="https://placehold.co/60x60" alt="Benco">
+                </div>
+                <div class="brand-logo">
+                    <img src="https://placehold.co/60x60" alt="MyLittleBox">
+                </div>
+                <div class="brand-logo">
+                    <img src="https://placehold.co/60x60" alt="Auchan">
+                </div>
+                <div class="brand-logo">
+                    <img src="https://placehold.co/60x60" alt="La Bourse aux Livres">
+                </div>
+                <div class="brand-logo">
+                    <img src="https://placehold.co/60x60" alt="Elmut">
+                </div>
+                <div class="brand-logo">
+                    <img src="https://placehold.co/60x60" alt="Orange">
+                </div>
+                <div class="brand-logo">
+                    <img src="https://placehold.co/60x60" alt="Bourjois">
+                </div>
+                <div class="brand-logo">
+                    <img src="https://placehold.co/60x60" alt="Somatoline">
+                </div>
+                <div class="brand-logo">
+                    <img src="https://placehold.co/60x60" alt="Ninja">
+                </div>
+                <div class="brand-logo">
+                    <img src="https://placehold.co/60x60" alt="Fnac">
+                </div>
+                <div class="brand-logo">
+                    <img src="https://placehold.co/60x60" alt="Happn">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="testimonials-title">Témoignages & Statistiques</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "On adore ta vidéo - c'est dynamique, naturel et authentique ! Merci beaucoup !"
+                    </div>
+                    <div class="testimonial-author">Client Darty</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "Bonsoir Fanny, Bien-sûr, voici les statistiques de ta vidéo vs celles de la campagne :<br>- Taux de clic : 2,01% vs 0,53%<br>- CPC : 0,49€ vs 1,13€<br>- CPA : 21,88€ vs 40,81€"
+                    </div>
+                    <div class="testimonial-author">Client Revlon</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "Okay c'est juste Waouh 😍<br>J'aime trop 🥰<br>Du coup je solde je vais faire en virement instantané."
+                    </div>
+                    <div class="testimonial-author">Client Pathé</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "Cette créatrice UGC a permis de faire passer le CPI de mon client (coût par installation d'App) de 4€ à 0,90€ grâce à une seule vidéo.<br>Elle s'appelle Fanny Foy 👩‍💻 et je me dois de mettre en lumière son travail puisque sa réussite est directement corrélée à mes résultats Meta Ads & Tiktok Ads."
+                    </div>
+                    <div class="testimonial-author">Agence Media</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Navigation -->
+    <div class="container">
+        <div class="categories-nav">
+            <button class="category-btn">Créas du mois</button>
+            <button class="category-btn">Beauté</button>
+            <button class="category-btn">Appli</button>
+            <button class="category-btn">Food</button>
+            <button class="category-btn">Animaux</button>
+            <button class="category-btn">Outdoor</button>
+            <button class="category-btn">Lifestyle</button>
+        </div>
+    </div>
+
+    <!-- Content Sections -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Créas du mois 🚀</h2>
+            <div class="content-grid">
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Pathé">
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-title">Pathé</div>
+                    </div>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="TootBus">
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-title">TootBus</div>
+                    </div>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Sisters républic">
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-title">Sisters républic</div>
+                    </div>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Lysia">
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-title">Lysia</div>
+                    </div>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Ben azri">
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-title">Ben azri</div>
+                    </div>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Voix-off sur devis 🎙️</h2>
+            <div class="content-grid">
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Voix-off 1">
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-title">Voix-off 1</div>
+                    </div>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Voix-off 2">
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-title">Voix-off 2</div>
+                    </div>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Voix-off 3">
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-title">Voix-off 3</div>
+                    </div>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Voix-off 4">
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-title">Voix-off 4</div>
+                    </div>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Beauté 🦋</h2>
+            <div class="content-grid">
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Avène">
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-title">Avène</div>
+                    </div>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Louise émoi">
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-title">Louise émoi</div>
+                    </div>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Ecume collagen">
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-title">Ecume collagen</div>
+                    </div>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Lynell Switzerland">
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-title">Lynell Switzerland</div>
+                    </div>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="900.care">
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-title">900.care</div>
+                    </div>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Appli 📱</h2>
+            <div class="content-grid">
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="TopCashback">
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-title">TopCashback</div>
+                    </div>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Promoaccro">
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-title">Promoaccro</div>
+                    </div>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Fruitz">
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-title">Fruitz</div>
+                    </div>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Headway">
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-title">Headway</div>
+                    </div>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="La bourse aux livres">
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-title">La bourse aux livres</div>
+                    </div>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Food 🍔</h2>
+            <div class="content-grid">
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Benco">
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-title">Benco</div>
+                    </div>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Pépinière">
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-title">Pépinière</div>
+                    </div>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Ninja creamy">
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-title">Ninja creamy</div>
+                    </div>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Bravo jeuneur">
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-title">Bravo jeuneur</div>
+                    </div>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Bâltis">
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-title">Bâltis</div>
+                    </div>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Outdoor 🌿</h2>
+            <div class="content-grid">
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Spa kechnaya">
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-title">Spa kechnaya</div>
+                    </div>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Mazette">
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-title">Mazette</div>
+                    </div>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="L'antichambre">
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-title">L'antichambre</div>
+                    </div>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="You&eye">
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-title">You&eye</div>
+                    </div>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Space cycle">
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-title">Space cycle</div>
+                    </div>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Lifestyle 🎬</h2>
+            <div class="content-grid">
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Somatoline">
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-title">Somatoline</div>
+                    </div>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Unilaser">
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-title">Unilaser</div>
+                    </div>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Wooskill">
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-title">Wooskill</div>
+                    </div>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Cadeau maestro">
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-title">Cadeau maestro</div>
+                    </div>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Unilaser">
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-title">Unilaser</div>
+                    </div>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Animaux 🐶</h2>
+            <div class="content-grid">
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Petite patounne">
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-title">Petite patounne</div>
+                    </div>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Franklin petfood">
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-title">Franklin petfood</div>
+                    </div>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Vetocanis">
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-title">Vetocanis</div>
+                    </div>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Elmut">
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-title">Elmut</div>
+                    </div>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Votre prochaine vidéo ?">
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-title">Votre prochaine vidéo ?</div>
+                    </div>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Mes photographies UGC 📸</h2>
+            <div class="content-grid">
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Photographie 1">
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Photographie 2">
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Photographie 3">
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Photographie 4">
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Photographie 5">
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Photographie 6">
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Photographie 7">
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Photographie 8">
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Photographie 9">
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="content-image">
+                        <img src="https://placehold.co/250x200" alt="Photographie 10">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <div class="container">
+            <h2 class="pricing-title">Mes tarifs HT</h2>
+            <p class="pricing-description">Ce qui est inclus dans une vidéo : 2 hooks (A/B testing) + 1 corps + 1 cta, voix off, montage, 2 révisions au besoin, sous-titres</p>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3 class="pricing-title-card">Organique</h3>
+                    <div class="pricing-price">170€</div>
+                    <ul class="pricing-list">
+                        <li>1 vidéo</li>
+                        <li>3 vidéos 485€</li>
+                        <li>5 vidéos 805€</li>
+                        <li>10 vidéos 1615€</li>
+                    </ul>
+                    <a href="#" class="cta-button">Réserver</a>
+                </div>
+                <div class="pricing-card">
+                    <h3 class="pricing-title-card">ADS</h3>
+                    <div class="pricing-price">220€</div>
+                    <ul class="pricing-list">
+                        <li>1 vidéo</li>
+                        <li>3 vidéos 625€</li>
+                        <li>5 vidéos 1045€</li>
+                        <li>10 vidéos 2090€</li>
+                    </ul>
+                    <a href="#" class="cta-button">Réserver</a>
+                </div>
+                <div class="pricing-card">
+                    <h3 class="pricing-title-card">Supplément</h3>
+                    <ul class="pricing-list">
+                        <li>SCRIPT 50€</li>
+                        <li>CTA 25€</li>
+                        <li>HOOK 25€</li>
+                        <li>PERSONNE SUPP* 80€</li>
+                    </ul>
+                    <a href="#" class="cta-button">Réserver</a>
+                </div>
+                <div class="pricing-card">
+                    <h3 class="pricing-title-card">Missions long terme</h3>
+                    <p>Profitez d'un forfait à prix réduit ! Avec un engagement mini de 3 mois pour la création d'au moins 5 vidéos par mois.</p>
+                    <p>Que ce soit pour dynamiser votre feed organique ou booster vos campagnes ADS.</p>
+                    <p>Écrivez-moi par mail pour en discuter.</p>
+                    <a href="#" class="cta-button">Réserver</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipment Section -->
+    <section class="equipment-section">
+        <div class="container">
+            <h2 class="equipment-title">Mon équipement</h2>
+            <p style="text-align: center; margin-bottom: 20px;">Image : DJI Osmo Pocket 3 / Iphone 15pro | Son : micro DJI | Lumière : une ring light | Montage : capcut</p>
+            
+            <div class="equipment-grid">
+                <div class="equipment-item">
+                    <div class="equipment-image">
+                        <img src="https://placehold.co/100x100" alt="DJI Osmo Pocket 3">
+                    </div>
+                    <div class="equipment-name">DJI Osmo</div>
+                </div>
+                <div class="equipment-item">
+                    <div class="equipment-image">
+                        <img src="https://placehold.co/100x100" alt="iPhone 15 Pro">
+                    </div>
+                    <div class="equipment-name">iPhone 15 Pro</div>
+                </div>
+                <div class="equipment-item">
+                    <div class="equipment-image">
+                        <img src="https://placehold.co/100x100" alt="Micro DJI">
+                    </div>
+                    <div class="equipment-name">Micro DJI</div>
+                </div>
+                <div class="equipment-item">
+                    <div class="equipment-image">
+                        <img src="https://placehold.co/100x100" alt="Ring Light">
+                    </div>
+                    <div class="equipment-name">Ring Light</div>
+                </div>
+                <div class="equipment-item">
+                    <div class="equipment-image">
+                        <img src="https://placehold.co/100x100" alt="CapCut">
+                    </div>
+                    <div class="equipment-name">CapCut</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="contact-title">Prêt à faire sortir votre prochaine campagne du lot ?</h2>
+            <p>Contactez moi pour établir votre devis personnalisé !</p>
+            
+            <div class="profile-container">
+                <div class="profile-image">
+                    <img src="https://placehold.co/150x150" alt="Fanny Profile">
+                </div>
+                <div class="contact-info">
+                    <div class="email">ugcfanny@gmail.com</div>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <a href="#" class="reserve-button">Réserver un call</a>
+                </div>
+            </div>
+            
+            <p style="margin-top: 20px; font-size: 0.9rem; color: var(--dark-color);">Profil de mon père - 62ans</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Conditions et assistance</p>
+            <p>Créé avec ❤️</p>
+        </div>
+    </footer>
+
+    <script>
+        // Add interactivity to category buttons
+        document.querySelectorAll('.category-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.category-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // Scroll to the corresponding section (in a real implementation)
+                // This is just a placeholder for demonstration
+                console.log('Category selected:', this.textContent);
+            });
+        });
+
+        // Add hover effect to content items
+        document.querySelectorAll('.content-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Add click functionality to play buttons
+        document.querySelectorAll('.play-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.stopPropagation();
+                alert('Video playback would start here in a real implementation.');
+            });
+        });
+    </script>
+</body>
+</html>
